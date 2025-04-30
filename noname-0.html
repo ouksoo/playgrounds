@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scroll Reveal with SVG Text Mask</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: white;
+    }
+
+    .container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .mask-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: white;
+      mask-image: url(#text-mask);
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      mask-position: center;
+      -webkit-mask-image: url(#text-mask);
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-size: contain;
+      -webkit-mask-position: center;
+      z-index: 1;
+    }
+
+    svg {
+      position: absolute;
+      width: 100vw;
+      height: 100%;
+    }
+
+    .spacer {
+      height: 200vh;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <video autoplay muted loop playsinline>
+    <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+  </video>
+
+  <svg id="mask-svg" viewBox="0 0 100% 100%" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <mask id="text-mask">
+        <rect width="100%" height="100%" fill="white"/>
+        <text id="mask-text" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="650" font-weight="bold" fill="black">PVG</text>
+      </mask>
+    </defs>
+    <rect width="100%" height="100%" fill="white" mask="url(#text-mask)"/>
+  </svg>
+</div>
+
+<div class="spacer"></div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.21/bundled/lenis.min.js"></script>
+<script>
+  //MASKING
+  const maskText = document.getElementById("mask-text");
+
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    const newSize = 650 + scrollY * 8;
+    maskText.setAttribute("font-size", newSize);
+  });
+
+  //SCROLL
+  const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
+      smoothTouch: false,
+    })
+
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+
+</script>
+
+</body>
+</html>

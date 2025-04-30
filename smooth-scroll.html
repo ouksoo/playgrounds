@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smooth Scroll Demo (Lenis)</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      /* overflow: hidden; ❌ 제거해야 함 */
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+    }
+
+    section {
+      height: 100vh; /* 한 섹션이 한 화면 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .section1 { background: #1e90ff; }
+    .section2 { background: #ff6b6b; }
+    .section3 { background: #28c76f; }
+    .section4 { background: #f9ca24; color: #111; }
+  </style>
+</head>
+<body>
+
+  <main>
+    <section class="section1">Section 1</section>
+    <section class="section2">Section 2</section>
+    <section class="section3">Section 3</section>
+    <section class="section4">Section 4</section>
+  </main>
+
+  <!-- Lenis 라이브러리 가져오기 -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.21/bundled/lenis.min.js"></script>
+
+  <script>
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
+      smoothTouch: false,
+    })
+
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+  </script>
+
+</body>
+</html>
