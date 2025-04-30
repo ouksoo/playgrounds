@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Climate Solutions</title>
+  <style>
+    html, body, div, section {
+      padding:0; margin: 0;
+    }    
+
+    section.homepage-header div.scroll-wrapper {
+      height: 150vh;
+    }
+
+    section.homepage-header div.video-intro {
+      align-items: end;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      height: 100dvh;
+      justify-content: start;
+      overflow: hidden;
+      position: sticky;
+      top: 0;
+      width: 100vw;
+    }
+
+    section.homepage-header div.video-intro div.media {
+      background-color: #9cabb2;
+      height: 100vh;
+      -webkit-mask-composite: source-over;
+      mask-composite: add;
+      -webkit-mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000pt' height='512' viewBox='0 0 1000 384'%3E%3Cpath d='M998.405 168.229H807.55v68.469h64.422c-14.15 20.357-37.7 33.685-64.422 33.685-26.723 0-50.168-13.28-64.415-33.685-8.734-12.612-13.862-27.996-13.862-44.578 0-8.314 1.346-16.34 3.742-23.891a79.27 79.27 0 0 1 21.346-33.492c13.958-12.901 32.716-20.83 53.237-20.83 19.431 0 37.323 7.165 51.041 18.918.761.571 1.434 1.246 2.203 1.912h130.472C966.851 56.62 893.799 0 807.55 0c-54.006 0-102.884 22.269-137.756 58.146l22.212-49.639H567.103l-83.365 207.698L400.902 8.507H275.999l17.989 41.236C265.158 21.08 234.942 8.507 181.697 8.507H0v365.989h114.11v-63.022h67.635c87.684 0 159.102-61.681 159.102-149.31 0-2.772-.097-5.543-.193-8.219l91.041 220.503h104.23l56.362-137.798 23.453-57.479.289-.667c-.289 4.49-.481 8.981-.481 13.568 0 15.384 1.827 30.295 5.28 44.578C640.924 321.074 717.046 384 807.558 384a191.93 191.93 0 0 0 125.672-46.875l7.195-6.21c1.731-1.527 3.357-3.157 4.896-4.78 23.934-24.366 41.25-55.182 49.407-89.493 3.453-14.235 5.272-29.145 5.272-44.578 0-8.122-.481-16.051-1.539-23.891l-.048.048zm-816.708 29.242H114.07v-80.222h67.627c24.8 0 44.992 12.901 44.992 37.701-.096 24.751-20.192 42.569-44.992 42.569z'/%3E%3C/svg%3E");
+      mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000pt' height='512' viewBox='0 0 1000 384'%3E%3Cpath d='M998.405 168.229H807.55v68.469h64.422c-14.15 20.357-37.7 33.685-64.422 33.685-26.723 0-50.168-13.28-64.415-33.685-8.734-12.612-13.862-27.996-13.862-44.578 0-8.314 1.346-16.34 3.742-23.891a79.27 79.27 0 0 1 21.346-33.492c13.958-12.901 32.716-20.83 53.237-20.83 19.431 0 37.323 7.165 51.041 18.918.761.571 1.434 1.246 2.203 1.912h130.472C966.851 56.62 893.799 0 807.55 0c-54.006 0-102.884 22.269-137.756 58.146l22.212-49.639H567.103l-83.365 207.698L400.902 8.507H275.999l17.989 41.236C265.158 21.08 234.942 8.507 181.697 8.507H0v365.989h114.11v-63.022h67.635c87.684 0 159.102-61.681 159.102-149.31 0-2.772-.097-5.543-.193-8.219l91.041 220.503h104.23l56.362-137.798 23.453-57.479.289-.667c-.289 4.49-.481 8.981-.481 13.568 0 15.384 1.827 30.295 5.28 44.578C640.924 321.074 717.046 384 807.558 384a191.93 191.93 0 0 0 125.672-46.875l7.195-6.21c1.731-1.527 3.357-3.157 4.896-4.78 23.934-24.366 41.25-55.182 49.407-89.493 3.453-14.235 5.272-29.145 5.272-44.578 0-8.122-.481-16.051-1.539-23.891l-.048.048zm-816.708 29.242H114.07v-80.222h67.627c24.8 0 44.992 12.901 44.992 37.701-.096 24.751-20.192 42.569-44.992 42.569z'/%3E%3C/svg%3E");
+      -webkit-mask-position: 48.1% 20%;
+      mask-position: 48.1% 20%;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: 86.6667vw;
+      mask-size: 86.6667vw;
+      overflow: hidden;
+      pointer-events: none;
+      position: absolute;
+      transform-origin: bottom left;
+      width: 100vw;
+      z-index: 1;
+    }
+
+    section.homepage-header div.video-intro div.media video {
+      height: 120vh;
+      object-fit: cover;
+      object-position: bottom center;
+      width: 100%;
+    }
+
+    section.homepage-header div.video-intro div.bottom {
+      align-items: flex-end;
+      display: grid;
+      grid-template-columns: auto auto;
+      padding-bottom: 40px;
+      padding-left: 6.6667vw;
+      padding-right: 6.6667vw;
+      position: relative;
+      z-index: 0;
+    }
+
+    section.homepage-header div.video-intro div.bottom ul {
+      align-items: center;
+      column-gap: 120px;
+      display: inline-flex;
+      justify-content: flex-end;
+      position: relative;
+      width: auto;
+    }
+
+    section.homepage-header div.video-intro div.bottom ul li {
+      margin-bottom: 0;
+    }
+
+    section.homepage-header div.video-intro div.bottom ul a {
+      color: #072c3e;
+      display: block;
+      font-size: .625rem;
+      font-weight: 500;
+      letter-spacing: -.15px;
+      position: relative;
+      transition: color .2s cubic-bezier(.33,1,.68,1) .3s;
+    }
+
+    section.homepage-header div.text-intro {
+      padding-bottom: 80px;
+    }
+
+    section.homepage-header div.text-intro div.callout {
+      margin-left: 56.6667vw;
+      margin-top: 64px;
+      width: 31.1111vw;
+    }
+
+    h1.h2 {font-size: 62px;}
+  </style>
+</head>
+<body>
+
+<section class="homepage-header">
+  <div class="scroll-wrapper">
+    <div class="video-intro" style="opacity: 1;">
+      <div class="video-wrapper cover media">
+        <video autoplay muted loop playsinline preload="auto" class="lazy">
+          <source src="https://cdn.sanity.io/files/jxhrltjy/production/3d54271a5a963e3f195b619767795c87cf82b635.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="bottom">
+        <h1 class="h2">Driving climate solutions from idea to impact.</h1>
+        <ul label="Homepage Nav">
+          <li><a href="/work">Work</a></li>
+          <li><a href="/latest">Latest</a></li>
+          <li><a href="/people">People</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.21/bundled/lenis.min.js"></script>
+<script>
+  // SCROLL MASK-SIZE 확대
+  const videoWrapper = document.querySelector('.video-wrapper');
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const baseSize = 86.6667;
+    const maxSize = 620;
+    const newSize = Math.min(baseSize + scrollY * 2, maxSize);
+    
+    videoWrapper.style.webkitMaskSize = `${newSize}vw`;
+    videoWrapper.style.maskSize = `${newSize}vw`;
+  });
+
+  // Lenis 부드러운 스크롤
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true,
+    smoothTouch: false,
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+</body>
+</html>
